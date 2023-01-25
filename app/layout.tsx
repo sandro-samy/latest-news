@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Navbar from "./navbar";
+import Providers from "./Providers";
 export default function RootLayout({
   children,
 }: {
@@ -7,13 +8,15 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <head />
+      {/* <Head /> */}
       <body
-        className="bg-gray-100
-       transition-all duration-700"
+        className="bg-gray-100 dark:bg-slate-900
+          transition-all duration-700"
       >
-        <Navbar />
-        <div className="max-w-6xl mx-auto">{children}</div>
+        <Providers>
+          <Navbar />
+          <div className="max-w-6xl mx-auto">{children}</div>
+        </Providers>
       </body>
     </html>
   );

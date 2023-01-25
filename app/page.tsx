@@ -1,6 +1,6 @@
 import React from "react";
 import { categories } from "../utils/data";
-import fetchNews from "../utils/fetchNews";
+// import fetchNews from "../utils/fetchNews";
 import NewsList from "./NewsList";
 
 const Homepage = async () => {
