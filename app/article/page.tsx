@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import LiveTimeStamp from "../LiveTimeStamp";
 const ArticlePage = ({ searchParams }: { searchParams?: Article }) => {
   if (
-    !searchParams ||
-    (searchParams && Object.keys(searchParams).length === 0)
+    (searchParams && Object.keys(searchParams).length === 0) ||
+    !searchParams
   ) {
     notFound();
   }
