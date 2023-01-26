@@ -1,58 +1,45 @@
-"use client";
 import { notFound } from "next/navigation";
-import { useEffect, useState } from "react";
 import LiveTimeStamp from "../LiveTimeStamp";
-
 const ArticlePage = ({ searchParams }: { searchParams?: Article }) => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  console.log(searchParams);
   if (
-    mounted &&
-    ((typeof searchParams === "object" &&
+    (typeof searchParams === "object" &&
       Object.entries(searchParams).length === 0) ||
-      typeof searchParams !== "object")
+    typeof searchParams !== "object"
   ) {
     return notFound();
   }
-  console.log(searchParams);
-  const article: Article | undefined = searchParams;
+    const article: Article = searchParams;
 
-  return (
-    <article>
-      {typeof article !== "undefined" ? (
+    return (
+      <article>
         <section className="flex flex-col lg:flex-row pb-24 px-0 lg:px-10">
           {article.image ? (
             <img
               className="h-50 max-w-md mx-auto md:max-w-lg lg:max-w-xl object-cover rounded-lg shadow-md"
-              src={article.image || ""}
+              src={article.image}
               alt={article.title}
             />
           ) : null}
 
           <div className="px-10">
             <h1 className="headerTitle px-0 no-underline pb-2">
-              {article?.title}
+              {article.title}
             </h1>
             <div className="flex divide-x-2 space-x-4">
-              {article?.author !== "null" ? (
-                <h2 className="font-bold">By: {article?.author}</h2>
+              {article.author !== "null" ? (
+                <h2 className="font-bold">By: {article.author}</h2>
               ) : null}
-              <h2 className="font-bold pl-4">Source: {article?.source}</h2>
+              <h2 className="font-bold pl-4">Source: {article.source}</h2>
               <p className="pl-4 mb-4">
-                <LiveTimeStamp time={article?.published_at || ""} />
+                <LiveTimeStamp time={article.published_at} />
               </p>
             </div>
-            <p className="">{article?.description}</p>
+            <p className="">{article.description}</p>
           </div>
         </section>
-      ) : (
-        <></>
-      )}
-    </article>
-  );
-};
+      </article>
+    );
+  }
 
 export default ArticlePage;
