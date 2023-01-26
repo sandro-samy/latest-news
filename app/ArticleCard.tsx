@@ -1,4 +1,5 @@
-import React from "react";
+import LiveTimeStamp from "./LiveTimeStamp";
+import ReadMoreBtn from "./ReadMoreBtn";
 
 const ArticleCard = ({ article }: { article: Article }) => {
   return (
@@ -18,9 +19,13 @@ const ArticleCard = ({ article }: { article: Article }) => {
           </section>
           <footer className="text-xs text-right ml-auto flex space-x-1 pt-5 italic text-gray-400">
             <p>{article.source} -</p>
-            <p> {article.published_at}</p>
+            <p>
+              {" "}
+              <LiveTimeStamp time={article.published_at} />
+            </p>
           </footer>
         </div>
+        <ReadMoreBtn article={article} />
       </div>
     </article>
   );

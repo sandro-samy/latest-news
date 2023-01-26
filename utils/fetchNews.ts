@@ -75,6 +75,7 @@ const fetchNews = async (
   const news = sortNewsByImage(newsResponse?.data.myQuery);
 
   return news
+  
 };
 
 export default fetchNews;
