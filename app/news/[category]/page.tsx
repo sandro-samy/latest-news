@@ -1,4 +1,5 @@
 import React from "react";
+import { categories } from "../../../utils/data";
 import fetchNews from "../../../utils/fetchNews";
 import NewsList from "../../NewsList";
 
@@ -19,3 +20,9 @@ const CategoryPage = async ({
 };
 
 export default CategoryPage;
+
+export async function generateStaticParams() {
+  return categories.map((category) => {
+    category: category;
+  });
+}
