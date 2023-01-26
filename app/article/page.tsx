@@ -1,3 +1,4 @@
+"use client"
 import { notFound } from "next/navigation";
 import LiveTimeStamp from "../LiveTimeStamp";
 const ArticlePage = ({ searchParams }: { searchParams?: Article }) => {
