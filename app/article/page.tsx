@@ -2,10 +2,10 @@ import { notFound } from "next/navigation";
 import LiveTimeStamp from "../LiveTimeStamp";
 const ArticlePage = ({ searchParams }: { searchParams?: Article }) => {
   if (
-    (searchParams && Object.keys(searchParams).length === 0) ||
+    (searchParams && Object.entries(searchParams).length === 0) ||
     !searchParams
   ) {
-    notFound();
+    return notFound();
   }
 
   const article: Article = searchParams;
@@ -26,7 +26,9 @@ const ArticlePage = ({ searchParams }: { searchParams?: Article }) => {
             {article.title}
           </h1>
           <div className="flex divide-x-2 space-x-4">
-            <h2 className="font-bold">By: {article.author}</h2>
+            {article.author !== "null" ? (
+              <h2 className="font-bold">By: {article.author}</h2>
+            ) : null}
             <h2 className="font-bold pl-4">Source: {article.source}</h2>
             <p className="pl-4 mb-4">
               <LiveTimeStamp time={article.published_at} />
