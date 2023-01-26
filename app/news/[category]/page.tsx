@@ -22,7 +22,7 @@ const CategoryPage = async ({
 export default CategoryPage;
 
 export async function generateStaticParams() {
-  return categories.map((category) => {
-    category: category;
-  });
+  return categories.map((category) => ({
+    category: category,
+  }));
 }
