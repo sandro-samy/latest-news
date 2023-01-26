@@ -9,10 +9,7 @@ const Homepage = async () => {
   return (
     <div>
       <NewsList
-        news={{
-          data: [],
-          pagination: { total: 0, offset: 0, limit: 0, count: 0 },
-        }}
+        news={news}
       />
     </div>
   );
