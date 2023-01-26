@@ -1,12 +1,11 @@
 import React from "react";
 import { categories } from "../utils/data";
-// import fetchNews from "../utils/fetchNews";
+import fetchNews from "../utils/fetchNews";
 import NewsList from "./NewsList";
 
 const Homepage = async () => {
-  // const news: NewsResponse = await fetchNews(categories.join(","));
+  const news: NewsResponse = await fetchNews(categories.join(","));
 
-  // console.log(news);
   return (
     <div>
       <NewsList
