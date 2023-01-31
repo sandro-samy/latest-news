@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { categories } from "../utils/data";
+import { categories } from "../../utils/data";
 import { usePathname } from "next/navigation";
 import Navlink from "./Navlink";
 

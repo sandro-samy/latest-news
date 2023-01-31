@@ -1,4 +1,4 @@
-import LiveTimeStamp from "./LiveTimeStamp";
+import LiveTimeStamp from "../UI/LiveTimeStamp";
 import ReadMoreBtn from "./ReadMoreBtn";
 
 const ArticleCard = ({ article }: { article: Article }) => {

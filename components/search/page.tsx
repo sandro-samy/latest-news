@@ -1,5 +1,5 @@
 import fetchNews from "../../utils/fetchNews";
-import NewsList from "../NewsList";
+import NewsList from "../NewList/NewsList";
 
 const SearchPage = async ({
   searchParams,
